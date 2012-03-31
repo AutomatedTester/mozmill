@@ -138,7 +138,8 @@ class Report(object):
 
         # Check if the report has been created
         if not 'ok' in data:
-            print "Creating report document failed (%s)" % data
+            print "Creating report document sent to %s failed with (%s)" % \
+                (report_url, data["reason"] if "reason" in data else data)
             return data
 
         # Print document location to the console and return
